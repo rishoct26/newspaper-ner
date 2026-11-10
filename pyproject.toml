@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "newspaper-ner"
 version = "0.1.0"
-dependencies = ["typer==0.28.0", "pillow==13.0.0", "pytesseract==0.3.13"]
+dependencies = ["typer==0.28.0", "pillow==13.0.0", "pytesseract==0.3.13", "spacy==3.8.18"]
 
 [tool.setuptools]
 package-dir = {"" = "work"}
@@ -17,3 +17,5 @@ where = ["work"]
 newspaper-ner = "newspaper_ner.cli:app"
 newspaper-ner-evaluate = "newspaper_ner.evaluation:app"
 newspaper-ner-aggregate = "newspaper_ner.aggregate:app"
+newspaper-ner-entities = "newspaper_ner.ner:app"
+newspaper-ner-score = "newspaper_ner.ner_evaluation:app"

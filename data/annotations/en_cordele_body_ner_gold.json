@@ -1,0 +1,32 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "source_region_id": "cordele-dispatch-1926-11-09-p01-article-body",
+  "source_ocr_result": "outputs/cordele-body-region-ocr.json",
+  "text_source": "The exact text reconstructed for the spaCy NER run; spans use Python Unicode character offsets with end exclusive.",
+  "input_text": "Edd C. Jones had not gone hunt-\ning—not specially after wild ducks\n—yesterday, but the day ended with\na fine one bagged. In some manner\nthe fowl became entangled in a hich\nwire over the back yard at the resi-\ndence of Mr. Jones and was so bad-\nly wounded that it fell. The noise\nit made attracted attention and it\nwas easily bagged before it recov-\nered sufficiently to get away.",
+  "verified_by": "User-confirmed entity list",
+  "verified_on": "2026-11-10",
+  "entities": [
+    {
+      "text": "Edd C. Jones",
+      "label": "PER",
+      "start_char": 0,
+      "end_char": 12
+    },
+    {
+      "text": "yesterday",
+      "label": "DATE",
+      "start_char": 68,
+      "end_char": 77
+    },
+    {
+      "text": "Jones",
+      "label": "PER",
+      "start_char": 222,
+      "end_char": 227
+    }
+  ]
+}

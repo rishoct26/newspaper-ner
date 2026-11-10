@@ -38,6 +38,13 @@ The Tesseract language data files belong in the ignored `models/tessdata/`
 directory. The current CLI supports `en` (Tesseract `eng`) and `hi` (Tesseract
 `hin`).
 
+The English NER baseline uses spaCy with `en_core_web_sm`. Install the model
+in the active virtual environment after installing the project:
+
+```powershell
+python -m spacy download en_core_web_sm
+```
+
 ## Run OCR
 
 From an activated environment with Tesseract configured:
@@ -51,6 +58,25 @@ For command help:
 ```powershell
 newspaper-ner --help
 ```
+
+Run the English NER stage on a word-level OCR JSON file:
+
+```powershell
+newspaper-ner-entities "outputs\cordele-body-region-ocr.json" -o "outputs\cordele-body-ner.json"
+```
+
+Score named entities against a manually checked gold annotation:
+
+```powershell
+newspaper-ner-score "outputs\cordele-body-ner.json" `
+  "data\annotations\en_cordele_body_ner_gold.json" `
+  -o "outputs\cordele-body-ner-evaluation.json"
+```
+
+The spaCy baseline provides entity labels and spans but no calibrated
+per-entity confidence score. The NER output therefore leaves
+`ner_confidence` null; it reports OCR confidence separately for the words
+forming each entity.
 
 ## Local data and scripts
 
