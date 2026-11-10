@@ -1,0 +1,65 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_revision": 2,
+  "revision_history": [
+    {
+      "revision": 1,
+      "date": "2026-11-10",
+      "change": "Initial annotation combined the headline and article body in one page region with printed line breaks."
+    },
+    {
+      "revision": 2,
+      "date": "2026-11-10",
+      "change": "Split the headline and article body into separate visually checked crops; changed the body reference to logical text with line-break hyphenation resolved; added source provenance and development split."
+    }
+  ],
+  "newspaper_title": "The Cordele Dispatch",
+  "issue_date": "1926-11-09",
+  "source_url": "https://www.loc.gov/item/2022239700/1926-11-09/ed-1/",
+  "original_jp2": {
+    "filename": "en_cordele-dispatch_1926-11-09_p01.jp2",
+    "path": "scans/en_dev/en_cordele-dispatch_1926-11-09_p01.jp2",
+    "sha256": "F4DA8BFAC0725301DF1F3BEF23EBCB4D29C3A1A9A8A1837254FB023E22AB95DE"
+  },
+  "derived_png": {
+    "filename": "en_cordele-dispatch_1926-11-09_p01.png",
+    "path": "scans/en_dev/en_cordele-dispatch_1926-11-09_p01.png",
+    "sha256": "2C1F5AA4D97C2C71497CD10F0B7E6154FBACC8180F319C158A27E4E21C7A5D00"
+  },
+  "page_width": 5403,
+  "page_height": 6991,
+  "bbox_coordinate_system": "page pixels; [left, top, right, bottom), right and bottom excluded",
+  "reference_line_breaks": "logical",
+  "verified_by": "Codex visual inspection",
+  "verified_on": "2026-11-10",
+  "regions": [
+    {
+      "region_id": "cordele-dispatch-1926-11-09-p01-headline",
+      "region_type": "headline",
+      "split": "dev",
+      "language": "en",
+      "bbox_xyxy": [210, 2405, 900, 2640],
+      "reference_text": "GREAT HUNTER GETS\nWILD DUCK\nVISIT"
+    },
+    {
+      "region_id": "cordele-dispatch-1926-11-09-p01-article-body",
+      "region_type": "article_body",
+      "split": "dev",
+      "language": "en",
+      "bbox_xyxy": [210, 2680, 905, 3300],
+      "reference_text": "Edd C. Jones had not gone hunting—not specially after wild ducks—yesterday, but the day ended with a fine one bagged. In some manner the fowl became entangled in a high wire over the back yard at the residence of Mr. Jones and was so badly wounded that it fell. The noise it made attracted attention and it was easily bagged before it recovered sufficiently to get away."
+    }
+  ],
+  "region_ocr_check": {
+    "mode": "region",
+    "language": "eng",
+    "oem": 3,
+    "page_segmentation_mode": 6,
+    "tessdata_dir": "models/tessdata",
+    "model_file": "eng.traineddata",
+    "tesseract_version": "5.4.0.20240606",
+    "eng_traineddata_sha256": "7D4322BD2A7749724879683FC3912CB542F19906C83BCC1A52132556427170B2",
+    "preprocessing": "none",
+    "result_summary": "Headline visually reads VISIT; PSM 6 OCR read VISTT. Body OCR read manner and recov- completely; it misread high as hich."
+  }
+}
