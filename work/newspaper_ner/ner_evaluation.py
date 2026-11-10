@@ -29,11 +29,8 @@ def _metrics(true_positives: int, false_positives: int, false_negatives: int) ->
     gold = true_positives + false_negatives
     precision = true_positives / predicted if predicted else None
     recall = true_positives / gold if gold else None
-    f1 = (
-        2 * precision * recall / (precision + recall)
-        if precision is not None and recall is not None and precision + recall
-        else None
-    )
+    f1_denominator = 2 * true_positives + false_positives + false_negatives
+    f1 = 2 * true_positives / f1_denominator if f1_denominator else None
     return {
         "true_positives": true_positives,
         "false_positives": false_positives,

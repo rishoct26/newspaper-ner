@@ -73,6 +73,16 @@ newspaper-ner-score "outputs\cordele-body-ner.json" `
   -o "outputs\cordele-body-ner-evaluation.json"
 ```
 
+Pool several region-level NER evaluations by summing their exact-span counts:
+
+```powershell
+newspaper-ner-pool-entities `
+  "outputs\cordele-body-ner-evaluation.json" `
+  "outputs\az0346-houdini-ner-evaluation.json" `
+  "outputs\az0346-header-ner-evaluation.json" `
+  -o "outputs\pooled-ner-evaluation.json"
+```
+
 The spaCy baseline provides entity labels and spans but no calibrated
 per-entity confidence score. The NER output therefore leaves
 `ner_confidence` null; it reports OCR confidence separately for the words

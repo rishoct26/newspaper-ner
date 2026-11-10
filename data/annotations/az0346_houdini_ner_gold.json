@@ -1,0 +1,42 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "source_region_id": "az0346-houdini-opening",
+  "source_page": "scans/en_dev/service-ndnp-az-batch_az_ironsprings_ver01-data-sn84020064-0041421759A-1926110901-0346.png",
+  "page_width": 6535,
+  "page_height": 8291,
+  "region_bbox_xyxy": [220, 2000, 1890, 2480],
+  "source_ocr_result": "outputs/az0346-houdini-region-v4-ocr.json",
+  "text_source": "Exact OCR text reconstructed for the spaCy NER run; spans use Python Unicode character offsets with end exclusive.",
+  "input_text": "-- HOUDINI AND THE SPIRITUALISTS\nFrom ‘London comes word that the spiritualists will attempt to\ncommunicate with the spirit of Harry Houdini, famous American\nmagician, in the “after-life.’ Such an announcement is of great\ninterest, for Houdini was the arch-enemy of faking in the attempt\nof mediums , to “communicate” with spirits of , departed persons.",
+  "verified_by": "User-confirmed entity list; visual inspection of page crop",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "HOUDINI",
+      "label": "PER",
+      "start_char": 3,
+      "end_char": 10
+    },
+    {
+      "text": "London",
+      "label": "LOC",
+      "start_char": 39,
+      "end_char": 45
+    },
+    {
+      "text": "Harry Houdini",
+      "label": "PER",
+      "start_char": 127,
+      "end_char": 140
+    },
+    {
+      "text": "Houdini",
+      "label": "PER",
+      "start_char": 236,
+      "end_char": 243
+    }
+  ]
+}

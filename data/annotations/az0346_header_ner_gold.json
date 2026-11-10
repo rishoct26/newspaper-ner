@@ -1,0 +1,31 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "region_type": "masthead",
+  "source_region_id": "az0346-newspaper-header",
+  "source_page": "scans/en_dev/service-ndnp-az-batch_az_ironsprings_ver01-data-sn84020064-0041421759A-1926110901-0346.png",
+  "page_width": 6535,
+  "page_height": 8291,
+  "region_bbox_xyxy": [1800, 400, 4300, 550],
+  "source_ocr_result": "outputs/az0346-header-region-ocr.json",
+  "text_source": "Exact OCR text reconstructed for the spaCy NER run; spans use Python Unicode character offsets with end exclusive.",
+  "input_text": "DOUGLAS DAILY DISPATCH, TUESDAY MORNING: NOVEMBER 9, 1926",
+  "verified_by": "User-confirmed entity labels; visual inspection of page crop",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "DOUGLAS DAILY DISPATCH",
+      "label": "ORG",
+      "start_char": 0,
+      "end_char": 22
+    },
+    {
+      "text": "NOVEMBER 9, 1926",
+      "label": "DATE",
+      "start_char": 41,
+      "end_char": 57
+    }
+  ]
+}
