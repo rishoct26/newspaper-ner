@@ -355,3 +355,47 @@ development OCR on Cordele/Douglas remains valid; held-out pages have not been
 OCR-evaluated as part of this review. The Chronicling America HTTP 403 remains
 unresolved; a later retry with a longer delay is optional while manual source
 downloads continue.
+
+## 12. Layout-model trial and page overlay (2026-11-11)
+
+The earlier projection-based splitter in `work/newspaper_ner/layout.py` is an
+experimental prototype. It worked on the Cordele tuning page but did not
+reliably separate columns on other page layouts. It is not used by the current
+page run.
+
+PaddleOCR **3.7.0** with PaddlePaddle **3.3.1** was installed and exercised in
+the ignored `.venv/layout-check/` environment on Python 3.13.13. The default
+PP-StructureV3 pipeline crashed in the CPU oneDNN path. Running the dedicated
+`LayoutDetection` model `PP-DocLayout_plus-L` with `enable_mkldnn=False` worked
+on both the Cordele and Douglas development pages. Its model files and cache
+remain under ignored `outputs/`; PaddleOCR was not added to the main project
+dependencies.
+
+The Cordele layout output contained 120 candidate regions. For the annotated
+article body, the model produced one text box `[213, 2676, 896, 3290]`, close to
+the manually checked crop `[210, 2680, 905, 3300]`. OCR over the detected layout
+regions produced 2,888 words for the page, and the body scored CER 2.4% without
+hyphen joining and 0.3% with joining, the same as the hand-cropped body result.
+This is a single development-region comparison, not a broad layout accuracy
+claim.
+
+New modules added in this step:
+
+- `work/newspaper_ner/layout_ocr.py` reads the saved PaddleOCR layout JSON,
+  runs Tesseract over detected text regions, and keeps word boxes in full-page
+  coordinates.
+- `work/newspaper_ner/overlay.py` draws PER, ORG, LOC, and DATE boxes and
+  labels on the supplied full-page image. Labels are placed outside boxes when
+  space permits.
+- `work/newspaper_ner/run_page.py` combines layout-region OCR, English spaCy
+  NER, and the overlay using a page image plus a precomputed layout JSON.
+
+The Cordele full-page run produced 2,888 OCR words and 297 entity predictions
+(109 LOC, 82 DATE, 54 ORG, 52 PER). The overlay is visibly crowded, and these
+are unverified model predictions, not 297 correct entities. The article-body
+NER result remains the only applicable gold-scored region here (F1 57.1%).
+Full-page layout inference is still a separate command in the isolated
+PaddleOCR environment; the combined project command currently takes the saved
+layout JSON as an input. The next engineering task is to make that handoff
+repeatable, inspect duplicate layout boxes and reading order, then annotate
+more development regions before tuning or making accuracy claims.
