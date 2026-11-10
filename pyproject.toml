@@ -15,3 +15,5 @@ where = ["work"]
 
 [project.scripts]
 newspaper-ner = "newspaper_ner.cli:app"
+newspaper-ner-evaluate = "newspaper_ner.evaluation:app"
+newspaper-ner-aggregate = "newspaper_ner.aggregate:app"
