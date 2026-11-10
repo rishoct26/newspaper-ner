@@ -8,6 +8,8 @@ from pathlib import Path
 
 import typer
 
+from .provenance import git_provenance
+
 app = typer.Typer(help="Evaluate NER predictions against a manually checked gold file.")
 LABELS = ("PER", "ORG", "LOC", "DATE")
 
@@ -92,6 +94,7 @@ def score_ner(prediction: dict, gold: dict, prediction_path: Path, gold_path: Pa
         "gold_file": str(gold_path),
         "model": prediction.get("ner_model"),
         "confidence_note": prediction.get("confidence_note"),
+        "software": git_provenance(),
         "overall": _metrics(tp, fp, fn),
         "by_label": per_label,
         "predictions": prediction["entities"],

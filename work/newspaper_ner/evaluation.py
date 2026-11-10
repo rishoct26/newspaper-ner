@@ -14,6 +14,8 @@ import PIL
 import pytesseract
 import typer
 
+from .provenance import git_provenance
+
 app = typer.Typer(help="Evaluate OCR output against an annotated region.")
 HYPHENS = {"-", "‐", "‑", "\u00ad"}
 DASHES = {
@@ -190,8 +192,7 @@ def evaluate_region(ocr_data: dict, annotation: dict, region_id: str, ocr_path: 
             "python": platform.python_version(), "pytesseract": pytesseract.__version__,
             "pillow": PIL.__version__,
             "tesseract": _tesseract_version(settings.get("tesseract_executable", "tesseract")),
-            "git_commit_hash": None,
-            "note": "Commit the evaluator before recording a reproducible commit hash.",
+            **git_provenance(),
         },
     }
 
