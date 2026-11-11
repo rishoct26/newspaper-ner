@@ -11,7 +11,7 @@ from pathlib import Path
 import spacy
 import typer
 
-from .ner import LABEL_MAP, MODEL_NAME
+from .ner import LABEL_MAP, MODEL_NAME, _rebuild_text
 from .ner_evaluation import LABELS, _metrics
 from .provenance import git_provenance
 
@@ -253,10 +253,18 @@ def _clean_text_entities(nlp, text: str) -> list[dict]:
     return result
 
 
+def _ocr_text_entities(nlp, ocr_path: Path) -> list[dict]:
+    """Run the selected model on the original OCR words for a fair model comparison."""
+    ocr_data = json.loads(ocr_path.read_text(encoding="utf-8"))
+    text, _aligned_words = _rebuild_text(ocr_data.get("words", []))
+    return _clean_text_entities(nlp, text)
+
+
 @app.command()
 def compare(
     input_dir: Path = typer.Option(Path("outputs"), "--input-dir", "-i", exists=True, file_okay=False),
     output: Path = typer.Option(Path("outputs/ner-dev-comparison.json"), "--output", "-o"),
+    model_name: str = typer.Option(MODEL_NAME, "--model", help="Installed spaCy pipeline to compare on both clean and OCR text."),
     threshold: float = typer.Option(0.8, min=0.0, max=1.0, help="Minimum character similarity for lenient matching."),
     bootstrap_samples: int = typer.Option(1000, min=1, help="Region bootstrap resamples."),
     seed: int = typer.Option(DEFAULT_SEED, help="Seed for reproducible bootstrap and false-positive sample."),
@@ -296,7 +304,7 @@ def compare(
             if not evaluations:
                 raise ValueError("Scope review excluded every development region.")
 
-        nlp = spacy.load(MODEL_NAME)
+        nlp = spacy.load(model_name)
         rows = []
         for path, evaluation in evaluations:
             gold_path = Path(evaluation["gold_file"])
@@ -308,7 +316,14 @@ def compare(
             if gold_data.get("source_region_id") != evaluation["source_region_id"]:
                 raise ValueError(f"Evaluation/gold region mismatch: {path}")
             gold_entities = gold_data["entities"]
-            ocr_predictions = evaluation["predictions"]
+            prediction_path = Path(evaluation["prediction_file"])
+            if not prediction_path.is_absolute():
+                prediction_path = Path.cwd() / prediction_path
+            prediction_data = json.loads(prediction_path.read_text(encoding="utf-8"))
+            ocr_path = Path(prediction_data["source_ocr_result"])
+            if not ocr_path.is_absolute():
+                ocr_path = Path.cwd() / ocr_path
+            ocr_predictions = _ocr_text_entities(nlp, ocr_path)
             clean_predictions = _clean_text_entities(nlp, gold_data["input_text"])
             if newspaper_title_rule:
                 ocr_predictions = _apply_known_title_rule(ocr_predictions)
@@ -365,8 +380,8 @@ def compare(
                 "excluded_region_ids": sorted(excluded_region_ids),
                 "method": scope_review_note,
             },
-            "model": {"name": MODEL_NAME, "version": nlp.meta.get("version")},
-            "software": git_provenance(),
+                "model": {"name": model_name, "version": nlp.meta.get("version")},
+            "software": {**git_provenance(), "spacy": spacy.__version__},
             "region_count": len(rows),
             "gold_entity_count": sum(row["gold_entity_count"] for row in rows),
             "overall": summarize(rows),
