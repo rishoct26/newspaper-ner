@@ -12,13 +12,13 @@
   "page_width": 3614,
   "page_height": 5420,
   "region_bbox_xyxy": [
-    265,
-    2100,
-    1540,
-    2490
+    254,
+    1890,
+    927,
+    2480
   ],
   "text_source": "Manually transcribed and visually checked against the scanned page; logical paragraph breaks retained.",
-  "input_text": "The nine were taken at London, O., 30 miles from Columbus, where they fled in an auto which they obtained by ejecting its woman driver.\n\nAll those recaptured were back at the prison two hours after the break. Search for Oliver Glaspy, the only convict still at large, was continued today.\n\nA movement was started today to obtain a pardon for Lattimer in recognition of his loyalty and courage. A petition for clemency will be presented to Gov. Donahey.",
+  "input_text": "The nine were taken at London, O., 30 miles from Columbus, where they fled in an auto which they obtained by ejecting its woman driver.\n\nSearch for One Resumed\n\nAll those recaptured were back at the prison two hours after the break. Search for Oliver Glaspy, the only convict still at large, was continued today.\n\nA movement was started today to obtain a pardon for Lattimer in recognition of his loyalty and courage. A petition for clemency will be presented to Gov. Donahey.",
   "verified_by": "Visual scan review",
   "verified_on": "2026-11-11",
   "entities": [
@@ -43,32 +43,32 @@
     {
       "text": "Oliver Glaspy",
       "label": "PER",
-      "start_char": 220,
-      "end_char": 233
+      "start_char": 244,
+      "end_char": 257
     },
     {
       "text": "today",
       "label": "DATE",
-      "start_char": 282,
-      "end_char": 287
+      "start_char": 306,
+      "end_char": 311
     },
     {
       "text": "today",
       "label": "DATE",
-      "start_char": 313,
-      "end_char": 318
+      "start_char": 337,
+      "end_char": 342
     },
     {
       "text": "Lattimer",
       "label": "PER",
-      "start_char": 342,
-      "end_char": 350
+      "start_char": 366,
+      "end_char": 374
     },
     {
       "text": "Gov. Donahey",
       "label": "PER",
-      "start_char": 439,
-      "end_char": 451
+      "start_char": 463,
+      "end_char": 475
     }
   ]
 }

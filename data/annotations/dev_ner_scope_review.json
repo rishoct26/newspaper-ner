@@ -1,19 +1,7 @@
 {
   "review_version": "1.0",
   "reviewed_on": "2026-11-11",
-  "method": "Visual review of the saved crop image against its inline verified reference. Exclude from paired OCR-versus-clean NER metrics only when the crop visibly includes neighboring text or the reference covers text outside the crop. This is a development-only scope control; it does not alter the annotations or page images. One corrected region was recropped and OCR-checked; its updated box now covers only the reference sentence. Two Washington Daily News article crops were retightened and OCR-checked; their text now covers the reference story without the previously included neighboring material. The Cordele Stafford/Ingram region was confirmed against its reference, which contains both adjacent social notes, and was restored to the paired set.",
-  "exclude_from_paired_evaluation": [
-    "cordele-dispatch-1926-11-10-testimonial-jane-campbell",
-    "douglas-dispatch-1926-11-09-masthead-lead",
-    "new-britain-herald-1926-11-09-fingerprint-headline",
-    "washington-daily-news-lattimer-recapture-pardon",
-    "washington-daily-news-prison-visitors-guards"
-  ],
-  "region_notes": {
-    "cordele-dispatch-1926-11-10-testimonial-jane-campbell": "Crop includes continuation beyond the short reference excerpt.",
-    "douglas-dispatch-1926-11-09-masthead-lead": "Crop spans multiple masthead, headline, and neighboring story areas; it does not match the short masthead/headline reference.",
-    "new-britain-herald-1926-11-09-fingerprint-headline": "Crop includes adjacent headlines and article text beyond the target headline/subheadline.",
-    "washington-daily-news-lattimer-recapture-pardon": "Reference contains a sentence absent from the crop, and the crop includes adjacent-column text.",
-    "washington-daily-news-prison-visitors-guards": "Reference continues beyond the lower edge of the crop."
-  }
+  "method": "Visual review of the saved crop image against its inline verified reference. Exclude from paired OCR-versus-clean NER metrics only when the crop visibly includes neighboring text or the reference covers text outside the crop. This is a development-only scope control; it does not alter the annotations or page images. One corrected region was recropped and OCR-checked; its updated box now covers only the reference sentence. Two Washington Daily News article crops were retightened and OCR-checked; their text now covers the reference story without the previously included neighboring material. The Cordele Stafford/Ingram region was confirmed against its reference, which contains both adjacent social notes, and was restored to the paired set. Cordele Jane Campbell was aligned with a page-coordinate polygon mask on the final line; OCR words after “this place.” were removed by their positions, retaining the full sentence. The New Britain fingerprint headline is represented by two disjoint, page-coordinate OCR regions (headline and subheadline); vertical-rule artifacts were removed from the subheadline crop. Douglas masthead/issue-line/lead are represented as three separate page-coordinate OCR parts to avoid top-page neighboring stories; the parts retain page-pixel boxes.",
+  "exclude_from_paired_evaluation": [],
+  "region_notes": {}
 }

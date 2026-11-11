@@ -12,10 +12,10 @@
   "page_width": 4888,
   "page_height": 6440,
   "region_bbox_xyxy": [
-    3500,
-    680,
-    4860,
-    2050
+    3530,
+    690,
+    4700,
+    1570
   ],
   "text_source": "Manually transcribed and visually checked against the scanned page.",
   "input_text": "TWO FINGERPRINT EXPERTS CERTAIN IN LINKING WILLIE STEVENS WITH HALL’S BODY\nFaurot and Schwartz Both Say They Found Likeness of His Finger on Card Found at Scene of Murder.",
@@ -45,6 +45,28 @@
       "label": "PER",
       "start_char": 86,
       "end_char": 94
+    }
+  ],
+  "region_parts": [
+    {
+      "name": "title",
+      "bbox_xyxy": [
+        3530,
+        690,
+        4660,
+        1120
+      ],
+      "psm": 6
+    },
+    {
+      "name": "subhead",
+      "bbox_xyxy": [
+        4080,
+        1170,
+        4700,
+        1570
+      ],
+      "psm": 6
     }
   ]
 }

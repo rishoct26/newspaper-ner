@@ -12,10 +12,10 @@
   "page_width": 5402,
   "page_height": 7030,
   "region_bbox_xyxy": [
-    1780,
-    4100,
-    2460,
-    4490
+    1788,
+    4114,
+    2441,
+    4292
   ],
   "text_source": "Manually transcribed and visually checked against the scanned page.",
   "input_text": "Langsville, Ohio.—“For years and years I suffered with severe headache,” says Mrs. Jane Campbell, of this place.",
@@ -40,5 +40,35 @@
       "start_char": 83,
       "end_char": 96
     }
-  ]
+  ],
+  "region_mask": {
+    "type": "page_pixel_polygon",
+    "vertices_xy": [
+      [
+        1788,
+        4114
+      ],
+      [
+        2441,
+        4114
+      ],
+      [
+        2441,
+        4230
+      ],
+      [
+        1995,
+        4230
+      ],
+      [
+        1995,
+        4292
+      ],
+      [
+        1788,
+        4292
+      ]
+    ],
+    "word_selection": "Keep an OCR word when its box starts left of x=1995 on the final text line (page y >= 4230); keep all OCR words above that line. This excludes the next sentence beginning after “this place.”."
+  }
 }

@@ -12,10 +12,10 @@
   "page_width": 6520,
   "page_height": 8293,
   "region_bbox_xyxy": [
-    400,
-    500,
-    6300,
-    1500
+    0,
+    620,
+    6520,
+    1600
   ],
   "text_source": "Manually transcribed from the scanned page; layout line breaks retained.",
   "input_text": "DOUGLAS DAILY DISPATCH\nDOUGLAS, ARIZONA, TUESDAY MORNING, NOVEMBER 9, 1926\nINCOME TAX REFUND TO APPLY ON 1926",
@@ -57,6 +57,38 @@
       "label": "DATE",
       "start_char": 105,
       "end_char": 109
+    }
+  ],
+  "region_parts": [
+    {
+      "name": "masthead",
+      "bbox_xyxy": [
+        0,
+        620,
+        6520,
+        930
+      ],
+      "psm": 13
+    },
+    {
+      "name": "issue",
+      "bbox_xyxy": [
+        2200,
+        970,
+        5100,
+        1180
+      ],
+      "psm": 6
+    },
+    {
+      "name": "headline",
+      "bbox_xyxy": [
+        450,
+        1190,
+        6400,
+        1600
+      ],
+      "psm": 6
     }
   ]
 }
