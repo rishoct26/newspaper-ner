@@ -24,8 +24,15 @@ spans.
 
 Report NER on both verified reference text (NER-only) and OCR text (end-to-end).
 Use exact entity-text-and-label matching and a separately reported lenient
-similarity match; count repeated mentions as separate occurrences. Freeze the
-lenient matching rule before evaluating test pages. Re-annotate two regions a
-few days later without consulting the first pass, and report span-and-label
-agreement. Test gold must be completed before viewing test predictions; any
-rule change after test evaluation requires v2 and a full rescore.
+similarity match; count repeated mentions as separate occurrences. For v1
+lenient matching, labels must match and `difflib.SequenceMatcher` character
+similarity must be at least 0.8. Pair exact duplicates first, then use a
+one-to-one maximum-cardinality match among remaining candidates. Report exact
+and lenient scores separately; do not compare them as if they were the same
+metric. For uncertainty, resample regions with replacement, pool mention
+counts for each replicate, and report the 2.5th and 97.5th percentiles from
+1,000 replicates (seed `20261111` in the current report). Freeze these rules
+before evaluating test pages. Re-annotate two regions a few days later without
+consulting the first pass, and report span-and-label agreement. Test gold must
+be completed before viewing test predictions; any rule change after test
+evaluation requires v2 and a full rescore.

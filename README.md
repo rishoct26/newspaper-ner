@@ -2,16 +2,19 @@
 
 A local Python command-line project for processing scanned newspaper pages.
 The OCR stage uses Tesseract and returns recognized words, OCR confidence, and
-page-pixel bounding boxes. Named-entity recognition is the next milestone; it
-is not implemented yet.
+page-pixel bounding boxes. The English baseline also runs spaCy NER for PER,
+ORG, LOC, and DATE, maps entities back to page bounding boxes, and evaluates
+OCR and NER outputs against manually checked development annotations. A page
+layout-detection handoff and entity-overlay command are available for the
+current English pilot.
 
 ## Current data and project limits
 
-The available development scan is a 1926 *Cordele Dispatch* page from the
-Library of Congress's Chronicling America collection. It is a historical U.S.
-newspaper sample for exercising the OCR and layout pipeline. Results on it do
-not represent current Indian newspapers. Hindi and Odia evaluation, and a
-representative Indian newspaper set, remain future work.
+The English development data contains historical U.S. newspaper pages from
+several titles, with 24 annotated regions and 148 gold entity mentions. It is
+an engineering and evaluation pilot, not a representative current Indian
+newspaper sample. Hindi NER, Odia, and validation on current Indian newspaper
+scans remain future work.
 
 The annotation and scoring rules for the current English development regions
 are in [docs/evaluation.md](docs/evaluation.md). The verified region references
@@ -71,6 +74,14 @@ Score named entities against a manually checked gold annotation:
 newspaper-ner-score "outputs\cordele-body-ner.json" `
   "data\annotations\en_cordele_body_ner_gold.json" `
   -o "outputs\cordele-body-ner-evaluation.json"
+```
+
+Compare clean-reference-text NER against saved OCR-text NER on dev regions,
+including exact and lenient scores and a reproducible region bootstrap:
+
+```powershell
+python -m newspaper_ner.comparison --input-dir outputs `
+  --output outputs\ner-dev-comparison.json
 ```
 
 Pool several region-level NER evaluations by summing their exact-span counts:
