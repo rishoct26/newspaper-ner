@@ -47,9 +47,9 @@
       "end_char": 436
     },
     {
-      "text": "Mrs. Hall",
+      "text": "Hall",
       "label": "PER",
-      "start_char": 518,
+      "start_char": 523,
       "end_char": 527
     },
     {
@@ -65,9 +65,9 @@
       "end_char": 570
     },
     {
-      "text": "Mrs. Hall",
+      "text": "Hall",
       "label": "PER",
-      "start_char": 640,
+      "start_char": 645,
       "end_char": 649
     },
     {

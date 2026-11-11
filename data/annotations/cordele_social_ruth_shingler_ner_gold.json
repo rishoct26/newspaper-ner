@@ -24,9 +24,9 @@
   "verified_on": "2026-11-11",
   "entities": [
     {
-      "text": "Miss Ruth Shingler",
+      "text": "Ruth Shingler",
       "label": "PER",
-      "start_char": 0,
+      "start_char": 5,
       "end_char": 18
     },
     {

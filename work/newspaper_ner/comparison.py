@@ -18,6 +18,31 @@ from .provenance import git_provenance
 app = typer.Typer(help="Compare clean-text and OCR-text NER on annotated development regions.")
 COUNT_NAMES = ("true_positives", "false_positives", "false_negatives")
 DEFAULT_SEED = 20261111
+KNOWN_NEWSPAPER_TITLES = {
+    "DOUGLAS DAILY DISPATCH",
+    "CORDELE DISPATCH",
+    "NEW BRITAIN HERALD",
+    "WASHINGTON DAILY NEWS",
+}
+
+
+def _normalize_title(text: str) -> str:
+    return " ".join(
+        "".join(ch if ch.isalnum() else " " for ch in text.upper()).split()
+    )
+
+
+def _apply_known_title_rule(entities: list[dict]) -> list[dict]:
+    """Relabel exact known newspaper mastheads from PER to ORG for a dev trial."""
+    updated = []
+    for entity in entities:
+        item = dict(entity)
+        normalized = _normalize_title(str(item["text"]))
+        known_titles = {_normalize_title(title) for title in KNOWN_NEWSPAPER_TITLES}
+        if item.get("label") == "PER" and normalized in known_titles:
+            item["label"] = "ORG"
+        updated.append(item)
+    return updated
 
 
 def _exact_counts(predictions: list[dict], gold: list[dict]) -> dict:
@@ -224,6 +249,8 @@ def compare(
     threshold: float = typer.Option(0.8, min=0.0, max=1.0, help="Minimum character similarity for lenient matching."),
     bootstrap_samples: int = typer.Option(1000, min=1, help="Region bootstrap resamples."),
     seed: int = typer.Option(DEFAULT_SEED, help="Seed for reproducible bootstrap and false-positive sample."),
+    newspaper_title_rule: bool = typer.Option(False, "--newspaper-title-rule", help="Apply the dev-known exact masthead PER-to-ORG correction."),
+    scope_review: Path | None = typer.Option(None, "--scope-review", exists=True, dir_okay=False, help="JSON file listing regions excluded from paired evaluation due to crop/reference mismatch."),
 ):
     """Compare OCR and verified-reference NER, exact/lenient, by region and title."""
     try:
@@ -241,6 +268,21 @@ def compare(
             raise ValueError("No ner-text-v1 development-region evaluations found.")
         if len(ids) != len(set(ids)):
             raise ValueError("Duplicate development source_region_id in evaluation files.")
+        excluded_region_ids: set[str] = set()
+        scope_review_note = None
+        if scope_review is not None:
+            review = json.loads(scope_review.read_text(encoding="utf-8"))
+            excluded_region_ids = set(review.get("exclude_from_paired_evaluation", []))
+            unknown = excluded_region_ids - set(ids)
+            if unknown:
+                raise ValueError(f"Scope-review IDs have no matching dev evaluation: {sorted(unknown)}")
+            evaluations = [
+                pair for pair in evaluations
+                if pair[1]["source_region_id"] not in excluded_region_ids
+            ]
+            scope_review_note = review.get("method")
+            if not evaluations:
+                raise ValueError("Scope review excluded every development region.")
 
         nlp = spacy.load(MODEL_NAME)
         rows = []
@@ -256,6 +298,9 @@ def compare(
             gold_entities = gold_data["entities"]
             ocr_predictions = evaluation["predictions"]
             clean_predictions = _clean_text_entities(nlp, gold_data["input_text"])
+            if newspaper_title_rule:
+                ocr_predictions = _apply_known_title_rule(ocr_predictions)
+                clean_predictions = _apply_known_title_rule(clean_predictions)
             rows.append({
                 "source_region_id": evaluation["source_region_id"],
                 "newspaper": _newspaper(evaluation["source_region_id"]),
@@ -291,6 +336,16 @@ def compare(
             },
             "clean_text_source": "verified input_text from each gold annotation; same spaCy model as OCR-text predictions",
             "ocr_text_source": "saved prediction entities from per-region ner-text-v1 evaluation JSONs",
+            "postprocessing": (
+                "Exact known newspaper-title PER-to-ORG correction applied to clean and OCR entities."
+                if newspaper_title_rule else "None"
+            ),
+            "scope_review": {
+                "file": str(scope_review) if scope_review is not None else None,
+                "excluded_region_count": len(excluded_region_ids),
+                "excluded_region_ids": sorted(excluded_region_ids),
+                "method": scope_review_note,
+            },
             "model": {"name": MODEL_NAME, "version": nlp.meta.get("version")},
             "software": git_provenance(),
             "region_count": len(rows),

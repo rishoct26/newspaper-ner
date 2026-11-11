@@ -24,15 +24,15 @@
   "verified_on": "2026-11-11",
   "entities": [
     {
-      "text": "Mrs. Will Macon",
+      "text": "Will Macon",
       "label": "PER",
-      "start_char": 0,
+      "start_char": 5,
       "end_char": 15
     },
     {
-      "text": "Mr. Macon",
+      "text": "Macon",
       "label": "PER",
-      "start_char": 61,
+      "start_char": 65,
       "end_char": 70
     },
     {

@@ -1,0 +1,29 @@
+{
+  "review_version": "1.0",
+  "reviewed_on": "2026-11-11",
+  "method": "Visual review of the saved crop image against its inline verified reference. Exclude from paired OCR-versus-clean NER metrics only when the crop visibly includes neighboring text or the reference covers text outside the crop. This is a development-only scope control; it does not alter the annotations or page images.",
+  "exclude_from_paired_evaluation": [
+    "cordele-dispatch-1926-11-10-testimonial-jane-campbell",
+    "cordele-dispatch-1926-11-10-social-stafford-ingram",
+    "douglas-dispatch-1926-11-09-masthead-lead",
+    "new-britain-herald-1926-11-09-fingerprint-headline",
+    "new-britain-fingerprint-jane-gibson",
+    "washington-daily-news-akron-church-scandal",
+    "washington-daily-news-gunton-auto-injury",
+    "washington-daily-news-lattimer-recapture-pardon",
+    "washington-daily-news-1926-11-09-poli-theater-sentence",
+    "washington-daily-news-prison-visitors-guards"
+  ],
+  "region_notes": {
+    "cordele-dispatch-1926-11-10-testimonial-jane-campbell": "Crop includes continuation beyond the short reference excerpt.",
+    "cordele-dispatch-1926-11-10-social-stafford-ingram": "Crop includes an adjacent Stafford item as well as the Ingram item.",
+    "douglas-dispatch-1926-11-09-masthead-lead": "Crop spans multiple masthead, headline, and neighboring story areas; it does not match the short masthead/headline reference.",
+    "new-britain-herald-1926-11-09-fingerprint-headline": "Crop includes adjacent headlines and article text beyond the target headline/subheadline.",
+    "new-britain-fingerprint-jane-gibson": "Crop includes the following Mrs. Mills item beyond the Jane Gibson reference.",
+    "washington-daily-news-akron-church-scandal": "Crop includes headline material not present in the reference excerpt.",
+    "washington-daily-news-gunton-auto-injury": "Crop includes the end of the preceding emergency-hospital item.",
+    "washington-daily-news-lattimer-recapture-pardon": "Reference contains a sentence absent from the crop, and the crop includes adjacent-column text.",
+    "washington-daily-news-1926-11-09-poli-theater-sentence": "Crop includes following paragraph text beyond the one-sentence reference.",
+    "washington-daily-news-prison-visitors-guards": "Reference continues beyond the lower edge of the crop."
+  }
+}

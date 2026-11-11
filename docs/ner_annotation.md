@@ -6,8 +6,11 @@ model's OCR output. Store exact reference-text offsets, entity text, and one of
 short note for hard calls. Count repeated mentions separately. Keep non-overlap
 spans.
 
-- **PER:** person's name, including initials and suffixes. Exclude titles
-  (`Judge`, `Mr.`, `Dr.`) and a grammatical possessive ending. Exclude leading
+- **PER:** person's name, including initials and suffixes. Exclude titles and
+  honorifics (`Judge`, `Mr.`, `Mrs.`, `Miss`, `Dr.`, `Rev.`, `Capt.`,
+  `Warden`, and similar designations), even when printed directly before the
+  name. **Exception:** keep `Commander` attached to the name, as requested for
+  this project. Exclude a grammatical possessive ending. Exclude leading
   `the`; retain `'s` when it is part of an official name such as `Poli's
   Theater`.
 - **ORG:** newspapers, businesses, named venues, institutions, government

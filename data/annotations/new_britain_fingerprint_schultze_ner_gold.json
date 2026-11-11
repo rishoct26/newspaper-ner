@@ -23,9 +23,9 @@
   "verified_on": "2026-11-11",
   "entities": [
     {
-      "text": "Dr. Otto Schultze",
+      "text": "Otto Schultze",
       "label": "PER",
-      "start_char": 54,
+      "start_char": 58,
       "end_char": 71
     },
     {
@@ -35,9 +35,9 @@
       "end_char": 81
     },
     {
-      "text": "Mrs. Mills",
+      "text": "Mills",
       "label": "PER",
-      "start_char": 133,
+      "start_char": 138,
       "end_char": 143
     }
   ]
