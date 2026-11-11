@@ -1,0 +1,123 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "region_type": "article_body",
+  "source_region_id": "new-britain-herald-1926-11-09-armistice-article",
+  "source_page": "scans/en_dev/service-ndnp-ct-batch_ct_genesis_ver01-data-sn82014519-00414219731-1926110901-0155.png",
+  "source_page_sha256": "DC1840A5351200988FF97931348A71E58AF391A75C351E576641EF261147B471",
+  "source_master_file": "service-ndnp-ct-batch_ct_genesis_ver01-data-sn82014519-00414219731-1926110901-0155.jp2",
+  "source_master_sha256": "DDDC0059A0BC878D519AEE3A69FE8304750E9E24D05E1A056C628D934DEC04A4",
+  "page_width": 4888,
+  "page_height": 6440,
+  "region_bbox_xyxy": [
+    1310,
+    2690,
+    1865,
+    4530
+  ],
+  "text_source": "Manually transcribed and checked against the scanned page; logical text with printed line wraps resolved.",
+  "input_text": "Citywide observance of Armistice Day and display of flags from homes and business houses is urged in orders for the day issued today by Commander Arthur H. Petts of the American Legion.\n\nAttendance at the civic banquet in the state armory is also advocated. This departure from the customary arrangements of Armistice Day celebration is considered more appropriate in Legion circles, Commander Petts writes.\n\nHis statement, addressed to all Legionnaires and the citizens of New Britain, reads:\n\n“With all thankfulness we look back to that Armistice Day which ended the World War. We remember how gladly men stood erect in the sun once more and let their fires shine out at night without concealment, how the load of anxiety fell in a moment from a world of women’s hearts, how a war-torn world turned back to peace with profound gratitude to the God who gave it and to the men who paid for it with their lives. In some way we lost as well as gained, on that Armistice Day.\n\n“While Armistice Day is an occasion of thanksgiving for victory, we must also honor the memory of those who gave their lives in the service of our country.\n\n“It is urgently requested that the merchants and citizens generally will display the flag of our country full staff all day November the eleventh.\n\n“The Eddy-Glover Post is sponsoring the civic banquet which has been arranged in the observance of Armistice Day, to be held at the State Armory at 7 o’clock November the eleventh. This is a departure from the usual observance of a parade, bonfire and dance, and is more in the keeping of the spirit of the day. It is urged as Legionnaires and citizens, that you attend this affair in honor of those who made the supreme sacrifice, and in gratitude for the victory that was won.\n\n“Attest,\n“William H. Turner, adjutant.\n“A. H. PETTS,\n“Commander.”",
+  "annotation_note": "PER spans include Commander as requested. Text transcribed from the scan; logical line wraps resolved.",
+  "verified_by": "User supplied the scan; transcription checked against page image.",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "Armistice Day",
+      "label": "DATE",
+      "start_char": 23,
+      "end_char": 36
+    },
+    {
+      "text": "today",
+      "label": "DATE",
+      "start_char": 127,
+      "end_char": 132
+    },
+    {
+      "text": "Commander Arthur H. Petts",
+      "label": "PER",
+      "start_char": 136,
+      "end_char": 161
+    },
+    {
+      "text": "American Legion",
+      "label": "ORG",
+      "start_char": 169,
+      "end_char": 184
+    },
+    {
+      "text": "New Britain",
+      "label": "LOC",
+      "start_char": 474,
+      "end_char": 485
+    },
+    {
+      "text": "Armistice Day",
+      "label": "DATE",
+      "start_char": 539,
+      "end_char": 552
+    },
+    {
+      "text": "Commander Petts",
+      "label": "PER",
+      "start_char": 384,
+      "end_char": 399
+    },
+    {
+      "text": "Armistice Day",
+      "label": "DATE",
+      "start_char": 539,
+      "end_char": 552
+    },
+    {
+      "text": "Armistice Day",
+      "label": "DATE",
+      "start_char": 958,
+      "end_char": 971
+    },
+    {
+      "text": "November the eleventh",
+      "label": "DATE",
+      "start_char": 1255,
+      "end_char": 1276
+    },
+    {
+      "text": "Eddy-Glover Post",
+      "label": "ORG",
+      "start_char": 1284,
+      "end_char": 1300
+    },
+    {
+      "text": "Armistice Day",
+      "label": "DATE",
+      "start_char": 1378,
+      "end_char": 1391
+    },
+    {
+      "text": "State Armory",
+      "label": "ORG",
+      "start_char": 1411,
+      "end_char": 1423
+    },
+    {
+      "text": "November the eleventh",
+      "label": "DATE",
+      "start_char": 1437,
+      "end_char": 1458
+    },
+    {
+      "text": "William H. Turner",
+      "label": "PER",
+      "start_char": 1769,
+      "end_char": 1786
+    },
+    {
+      "text": "A. H. PETTS",
+      "label": "PER",
+      "start_char": 1799,
+      "end_char": 1810
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-"""Pool saved exact-span NER evaluation results."""
+"""Pool saved exact-text NER evaluation results."""
 
 from __future__ import annotations
 
@@ -22,14 +22,14 @@ def aggregate(
     evaluation_files: list[Path] = typer.Argument(..., exists=True, dir_okay=False),
     output: Path = typer.Option(Path("outputs/pooled-ner-evaluation.json"), "--output", "-o"),
 ):
-    """Combine exact-span counts and compute pooled NER metrics."""
+    """Combine exact-text counts and compute pooled NER metrics."""
     try:
         region_results = [
             json.loads(path.read_text(encoding="utf-8")) for path in evaluation_files
         ]
         for result in region_results:
-            if result.get("evaluation_rules_version") != "ner-span-v1":
-                raise ValueError("All inputs must use NER scoring rules ner-span-v1.")
+            if result.get("evaluation_rules_version") != "ner-text-v1":
+                raise ValueError("All inputs must use NER scoring rules ner-text-v1.")
 
         region_ids = [result["source_region_id"] for result in region_results]
         if len(region_ids) != len(set(region_ids)):
@@ -52,8 +52,8 @@ def aggregate(
         pooled_by_label[label] = _metrics(**counts)
 
     result = {
-        "evaluation_rules_version": "ner-span-v1",
-        "matching": "exact character span and entity label",
+        "evaluation_rules_version": "ner-text-v1",
+        "matching": "exact entity text and label; repeated mentions counted",
         "region_count": len(region_results),
         "input_files": [str(path) for path in evaluation_files],
         "per_region": [
@@ -78,3 +78,4 @@ def aggregate(
 
 if __name__ == "__main__":
     app()
+
