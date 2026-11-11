@@ -41,10 +41,14 @@ The Tesseract language data files belong in the ignored `models/tessdata/`
 directory. The current CLI supports `en` (Tesseract `eng`) and `hi` (Tesseract
 `hin`).
 
-The English NER baseline uses spaCy with `en_core_web_sm`. Install the model
-in the active virtual environment after installing the project:
+The English NER baseline uses spaCy with `en_core_web_lg` (model package
+3.8.0; about 401 MB). It is pinned as a project dependency, so a fresh
+editable install downloads it. If you need to install it separately, use the
+first command below. The older small model is only needed to reproduce the
+model-size comparison:
 
 ```powershell
+python -m spacy download en_core_web_lg
 python -m spacy download en_core_web_sm
 ```
 

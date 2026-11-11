@@ -9,7 +9,7 @@ import spacy
 import typer
 
 app = typer.Typer(help="Recognize named entities in OCR output.")
-MODEL_NAME = "en_core_web_sm"
+MODEL_NAME = "en_core_web_lg"
 LABEL_MAP = {
     "PERSON": "PER",
     "ORG": "ORG",
@@ -66,7 +66,7 @@ def recognize_entities(ocr_data: dict, source_path: Path) -> dict:
     except OSError as error:
         raise FileNotFoundError(
             "English spaCy model is missing. Install it with: "
-            "python -m spacy download en_core_web_sm"
+            "python -m spacy download en_core_web_lg"
         ) from error
     doc = nlp(text)
 
