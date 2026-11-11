@@ -1,0 +1,86 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "region_type": "article_body_paragraphs",
+  "source_region_id": "new-britain-fingerprint-defendants-court-arrival",
+  "source_page": "scans/en_dev/service-ndnp-ct-batch_ct_genesis_ver01-data-sn82014519-00414219731-1926110901-0155.png",
+  "source_page_sha256": "DC1840A5351200988FF97931348A71E58AF391A75C351E576641EF261147B471",
+  "source_master_file": "service-ndnp-ct-batch_ct_genesis_ver01-data-sn82014519-00414219731-1926110901-0155.jp2",
+  "source_master_sha256": "DDDC0059A0BC878D519AEE3A69FE8304750E9E24D05E1A056C628D934DEC04A4",
+  "page_width": 4888,
+  "page_height": 6440,
+  "region_bbox_xyxy": [
+    4080,
+    4260,
+    4840,
+    5250
+  ],
+  "text_source": "Manually transcribed and visually checked against the scanned page; logical line wraps resolved.",
+  "input_text": "The defense today continued its effort to tear down the fingerprint evidence introduced by the prosecution to link Willie Stevens, one of the three defendants, with the slayings. Overcast skies, with rain falling part of the time, today reduced somewhat the size of the crowds that each morning gather outside the courthouse doors in the hope of gaining admission. The small courtroom was not big enough to hold all those who even today sought to get seats to the biggest event this small town has witnessed in years. Mrs. Hall and her brothers, Willie and Henry Stevens, the defendants, arrived in court several minutes before it resumed. Mrs. Hall wore black as usual, as the only lighter touch to her clothing being a small white collar. For days she has worn the same hat and coat, and apparently the same dress. Although Willie and Henry Stevens are in jail pending the trial, they apparently are paying strict attention to their laundry, appearing each morning wearing newly starched collars and looking as though they had come directly from their homes.",
+  "verified_by": "Visual scan review",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "today",
+      "label": "DATE",
+      "start_char": 12,
+      "end_char": 17
+    },
+    {
+      "text": "Willie Stevens",
+      "label": "PER",
+      "start_char": 115,
+      "end_char": 129
+    },
+    {
+      "text": "today",
+      "label": "DATE",
+      "start_char": 231,
+      "end_char": 236
+    },
+    {
+      "text": "today",
+      "label": "DATE",
+      "start_char": 431,
+      "end_char": 436
+    },
+    {
+      "text": "Mrs. Hall",
+      "label": "PER",
+      "start_char": 518,
+      "end_char": 527
+    },
+    {
+      "text": "Willie",
+      "label": "PER",
+      "start_char": 546,
+      "end_char": 552
+    },
+    {
+      "text": "Henry Stevens",
+      "label": "PER",
+      "start_char": 557,
+      "end_char": 570
+    },
+    {
+      "text": "Mrs. Hall",
+      "label": "PER",
+      "start_char": 640,
+      "end_char": 649
+    },
+    {
+      "text": "Willie",
+      "label": "PER",
+      "start_char": 826,
+      "end_char": 832
+    },
+    {
+      "text": "Henry Stevens",
+      "label": "PER",
+      "start_char": 837,
+      "end_char": 850
+    }
+  ]
+}

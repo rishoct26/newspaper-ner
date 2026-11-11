@@ -1,0 +1,44 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "region_type": "article_body_sentence",
+  "source_region_id": "new-britain-fingerprint-schultze",
+  "source_page": "scans/en_dev/service-ndnp-ct-batch_ct_genesis_ver01-data-sn82014519-00414219731-1926110901-0155.png",
+  "source_page_sha256": "DC1840A5351200988FF97931348A71E58AF391A75C351E576641EF261147B471",
+  "source_master_file": "service-ndnp-ct-batch_ct_genesis_ver01-data-sn82014519-00414219731-1926110901-0155.jp2",
+  "source_master_sha256": "DDDC0059A0BC878D519AEE3A69FE8304750E9E24D05E1A056C628D934DEC04A4",
+  "page_width": 4888,
+  "page_height": 6440,
+  "region_bbox_xyxy": [
+    4080,
+    4080,
+    4840,
+    4260
+  ],
+  "text_source": "Manually transcribed and visually checked against the scanned page.",
+  "input_text": "These exhibits will be used during the examination of Dr. Otto Schultze, New York physician, who performed an autopsy on the body of Mrs. Mills.",
+  "verified_by": "Visual scan review",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "Dr. Otto Schultze",
+      "label": "PER",
+      "start_char": 54,
+      "end_char": 71
+    },
+    {
+      "text": "New York",
+      "label": "LOC",
+      "start_char": 73,
+      "end_char": 81
+    },
+    {
+      "text": "Mrs. Mills",
+      "label": "PER",
+      "start_char": 133,
+      "end_char": 143
+    }
+  ]
+}

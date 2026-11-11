@@ -1,0 +1,86 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "region_type": "social_column_entry",
+  "source_region_id": "cordele-dispatch-1926-11-10-social-football-guests",
+  "source_page": "scans/en_dev/service-ndnp-gu-batch_gu_grouch_ver01-data-2022239700-0051701039A-1926111001-1181.png",
+  "source_page_sha256": "A1CE9275BCD7F2081761E4CF70E6C5BC3AAEF965131FFC97304CA019BC83782F",
+  "source_master_file": "service-ndnp-gu-batch_gu_grouch_ver01-data-2022239700-0051701039A-1926111001-1181.jp2",
+  "source_master_sha256": "1F3C3191D7E8721FFE00DB1548B851EDA427EA07ED925446F6612B3BEEFFCBF2",
+  "page_width": 5402,
+  "page_height": 7030,
+  "region_bbox_xyxy": [
+    1760,
+    3200,
+    2480,
+    3700
+  ],
+  "text_source": "Manually transcribed and visually checked against the scanned page.",
+  "input_text": "Among those from Cordele who will attend the football game in Atlanta Saturday are: Mr. and Mrs. R. E. Harris, Mrs. M. Wakefield, Mrs. R. R. Harris, Mr. and Mrs. Nat Green, Mrs. Perry Clegg, Sam Edd and Perry Clegg Jr.",
+  "verified_by": "Visual scan review",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "Cordele",
+      "label": "LOC",
+      "start_char": 17,
+      "end_char": 24
+    },
+    {
+      "text": "Atlanta",
+      "label": "LOC",
+      "start_char": 62,
+      "end_char": 69
+    },
+    {
+      "text": "Saturday",
+      "label": "DATE",
+      "start_char": 70,
+      "end_char": 78
+    },
+    {
+      "text": "R. E. Harris",
+      "label": "PER",
+      "start_char": 97,
+      "end_char": 109
+    },
+    {
+      "text": "M. Wakefield",
+      "label": "PER",
+      "start_char": 116,
+      "end_char": 128
+    },
+    {
+      "text": "R. R. Harris",
+      "label": "PER",
+      "start_char": 135,
+      "end_char": 147
+    },
+    {
+      "text": "Nat Green",
+      "label": "PER",
+      "start_char": 162,
+      "end_char": 171
+    },
+    {
+      "text": "Perry Clegg",
+      "label": "PER",
+      "start_char": 178,
+      "end_char": 189
+    },
+    {
+      "text": "Sam Edd",
+      "label": "PER",
+      "start_char": 191,
+      "end_char": 198
+    },
+    {
+      "text": "Perry Clegg Jr.",
+      "label": "PER",
+      "start_char": 203,
+      "end_char": 218
+    }
+  ]
+}

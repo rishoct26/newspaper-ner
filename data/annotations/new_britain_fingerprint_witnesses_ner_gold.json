@@ -1,0 +1,68 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "region_type": "article_body_paragraph",
+  "source_region_id": "new-britain-fingerprint-witnesses-paragraph",
+  "source_page": "scans/en_dev/service-ndnp-ct-batch_ct_genesis_ver01-data-sn82014519-00414219731-1926110901-0155.png",
+  "source_page_sha256": "DC1840A5351200988FF97931348A71E58AF391A75C351E576641EF261147B471",
+  "source_master_file": "service-ndnp-ct-batch_ct_genesis_ver01-data-sn82014519-00414219731-1926110901-0155.jp2",
+  "source_master_sha256": "DDDC0059A0BC878D519AEE3A69FE8304750E9E24D05E1A056C628D934DEC04A4",
+  "page_width": 4888,
+  "page_height": 6440,
+  "region_bbox_xyxy": [
+    4080,
+    2550,
+    4840,
+    2900
+  ],
+  "text_source": "Manually transcribed and visually checked against the scanned page; printed line wrap resolved.",
+  "input_text": "Two of the state’s expert fingerprint witnesses, Joseph A. Faurot, of New York, and Edward Schwartz, of Newark, repeated that a fingerprint on the card is that of Willie Stevens, a defendant in the case with his sister, Mrs. Frances Stevens Hall, and brother, Henry Stevens.",
+  "verified_by": "Visual scan review",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "Joseph A. Faurot",
+      "label": "PER",
+      "start_char": 49,
+      "end_char": 65
+    },
+    {
+      "text": "New York",
+      "label": "LOC",
+      "start_char": 70,
+      "end_char": 78
+    },
+    {
+      "text": "Edward Schwartz",
+      "label": "PER",
+      "start_char": 84,
+      "end_char": 99
+    },
+    {
+      "text": "Newark",
+      "label": "LOC",
+      "start_char": 104,
+      "end_char": 110
+    },
+    {
+      "text": "Willie Stevens",
+      "label": "PER",
+      "start_char": 163,
+      "end_char": 177
+    },
+    {
+      "text": "Frances Stevens Hall",
+      "label": "PER",
+      "start_char": 225,
+      "end_char": 245
+    },
+    {
+      "text": "Henry Stevens",
+      "label": "PER",
+      "start_char": 260,
+      "end_char": 273
+    }
+  ]
+}

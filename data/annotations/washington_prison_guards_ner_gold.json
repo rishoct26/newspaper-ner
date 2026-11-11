@@ -1,0 +1,44 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "region_type": "article_body_paragraphs",
+  "source_region_id": "washington-daily-news-prison-visitors-guards",
+  "source_page": "scans/en_dev/service-ndnp-dlc-batch_dlc_dicorcia_ver01-data-sn82016181-00529045888-1926110901-0192.png",
+  "source_page_sha256": "9A2DF9CE503B84F329FAD3CC8A0EFB6B89EFE9962B56699C8E90EE02E0E2B0D8",
+  "source_master_file": "service-ndnp-dlc-batch_dlc_dicorcia_ver01-data-sn82016181-00529045888-1926110901-0192.jp2",
+  "source_master_sha256": "D750018B3B15546696B7F35FF97062DB79106866A3BD6871D4EA31C8536A5794",
+  "page_width": 3614,
+  "page_height": 5420,
+  "region_bbox_xyxy": [
+    265,
+    3040,
+    910,
+    3360
+  ],
+  "text_source": "Manually transcribed and visually checked against the scanned page; logical paragraph breaks retained.",
+  "input_text": "The conspirators, who were among 30 prisoners being exercised in the yard, made their dash just as two iron gates were swung open to admit visitors. As the visitors fled in terror the convicts knifed Elmer Callahan, a guard. Capt. George Bennett and Guard John Cochran ran to intervene but were clubbed. Other guards began a steady fire but the convicts paused only long enough to reply with their own bullets.",
+  "verified_by": "Visual scan review",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "Elmer Callahan",
+      "label": "PER",
+      "start_char": 200,
+      "end_char": 214
+    },
+    {
+      "text": "George Bennett",
+      "label": "PER",
+      "start_char": 231,
+      "end_char": 245
+    },
+    {
+      "text": "John Cochran",
+      "label": "PER",
+      "start_char": 256,
+      "end_char": 268
+    }
+  ]
+}

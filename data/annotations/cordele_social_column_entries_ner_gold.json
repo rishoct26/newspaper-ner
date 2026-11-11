@@ -1,0 +1,152 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "region_type": "social_column_entries",
+  "source_region_id": "cordele-dispatch-1926-11-10-social-column-entries",
+  "source_page": "scans/en_dev/service-ndnp-gu-batch_gu_grouch_ver01-data-2022239700-0051701039A-1926111001-1181.png",
+  "source_page_sha256": "A1CE9275BCD7F2081761E4CF70E6C5BC3AAEF965131FFC97304CA019BC83782F",
+  "source_master_file": "service-ndnp-gu-batch_gu_grouch_ver01-data-2022239700-0051701039A-1926111001-1181.jp2",
+  "source_master_sha256": "1F3C3191D7E8721FFE00DB1548B851EDA427EA07ED925446F6612B3BEEFFCBF2",
+  "page_width": 5402,
+  "page_height": 7030,
+  "region_bbox_xyxy": [
+    1760,
+    900,
+    2480,
+    2200
+  ],
+  "text_source": "Manually transcribed and visually checked against the scanned page; printed line-end hyphens resolved.",
+  "input_text": "Mrs. B. S. Ambrose, of Rochelle, was shopping in Cordele today.\n\nMr. and Mrs. Paul Gaddy have returned to Macon after spending several days here with Mrs. R. J. Gaddy.\n\nMiss Ruth Shingler, who is teaching at Lilly, spent the past week-end at home.\n\nMrs. Will Macon and infant son left several days ago to join Mr. Macon in West Palm Beach, Fla.\n\nMorris Tripp, of Monticello, Fla., resident of Cordele some years ago, was a visitor in the city today.\n\nMr. and Mrs. Russell Harris, Jr., announce the birth of a daughter, November ninth, who has been named Lillian Elaine.",
+  "verified_by": "Visual scan review",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "B. S. Ambrose",
+      "label": "PER",
+      "start_char": 5,
+      "end_char": 18
+    },
+    {
+      "text": "Rochelle",
+      "label": "LOC",
+      "start_char": 23,
+      "end_char": 31
+    },
+    {
+      "text": "Cordele",
+      "label": "LOC",
+      "start_char": 49,
+      "end_char": 56
+    },
+    {
+      "text": "today",
+      "label": "DATE",
+      "start_char": 57,
+      "end_char": 62
+    },
+    {
+      "text": "Paul Gaddy",
+      "label": "PER",
+      "start_char": 78,
+      "end_char": 88
+    },
+    {
+      "text": "Macon",
+      "label": "LOC",
+      "start_char": 106,
+      "end_char": 111
+    },
+    {
+      "text": "R. J. Gaddy",
+      "label": "PER",
+      "start_char": 155,
+      "end_char": 166
+    },
+    {
+      "text": "Ruth Shingler",
+      "label": "PER",
+      "start_char": 174,
+      "end_char": 187
+    },
+    {
+      "text": "Lilly",
+      "label": "LOC",
+      "start_char": 208,
+      "end_char": 213
+    },
+    {
+      "text": "Will Macon",
+      "label": "PER",
+      "start_char": 254,
+      "end_char": 264
+    },
+    {
+      "text": "Mr. Macon",
+      "label": "PER",
+      "start_char": 310,
+      "end_char": 319
+    },
+    {
+      "text": "West Palm Beach",
+      "label": "LOC",
+      "start_char": 323,
+      "end_char": 338
+    },
+    {
+      "text": "Fla.",
+      "label": "LOC",
+      "start_char": 340,
+      "end_char": 344
+    },
+    {
+      "text": "Morris Tripp",
+      "label": "PER",
+      "start_char": 346,
+      "end_char": 358
+    },
+    {
+      "text": "Monticello",
+      "label": "LOC",
+      "start_char": 363,
+      "end_char": 373
+    },
+    {
+      "text": "Fla.",
+      "label": "LOC",
+      "start_char": 375,
+      "end_char": 379
+    },
+    {
+      "text": "Cordele",
+      "label": "LOC",
+      "start_char": 393,
+      "end_char": 400
+    },
+    {
+      "text": "today",
+      "label": "DATE",
+      "start_char": 443,
+      "end_char": 448
+    },
+    {
+      "text": "Russell Harris, Jr.",
+      "label": "PER",
+      "start_char": 464,
+      "end_char": 483
+    },
+    {
+      "text": "November ninth",
+      "label": "DATE",
+      "start_char": 519,
+      "end_char": 533
+    },
+    {
+      "text": "Lillian Elaine",
+      "label": "PER",
+      "start_char": 554,
+      "end_char": 568
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "region_type": "advertorial_testimonial",
+  "source_region_id": "cordele-dispatch-1926-11-10-testimonial-jane-campbell",
+  "source_page": "scans/en_dev/service-ndnp-gu-batch_gu_grouch_ver01-data-2022239700-0051701039A-1926111001-1181.png",
+  "source_page_sha256": "A1CE9275BCD7F2081761E4CF70E6C5BC3AAEF965131FFC97304CA019BC83782F",
+  "source_master_file": "service-ndnp-gu-batch_gu_grouch_ver01-data-2022239700-0051701039A-1926111001-1181.jp2",
+  "source_master_sha256": "1F3C3191D7E8721FFE00DB1548B851EDA427EA07ED925446F6612B3BEEFFCBF2",
+  "page_width": 5402,
+  "page_height": 7030,
+  "region_bbox_xyxy": [
+    1780,
+    4100,
+    2460,
+    4490
+  ],
+  "text_source": "Manually transcribed and visually checked against the scanned page.",
+  "input_text": "Langsville, Ohio.—“For years and years I suffered with severe headache,” says Mrs. Jane Campbell, of this place.",
+  "verified_by": "Visual scan review",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "Langsville",
+      "label": "LOC",
+      "start_char": 0,
+      "end_char": 10
+    },
+    {
+      "text": "Ohio",
+      "label": "LOC",
+      "start_char": 12,
+      "end_char": 16
+    },
+    {
+      "text": "Jane Campbell",
+      "label": "PER",
+      "start_char": 83,
+      "end_char": 96
+    }
+  ]
+}

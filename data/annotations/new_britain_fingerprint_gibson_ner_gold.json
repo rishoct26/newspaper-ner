@@ -1,0 +1,44 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "region_type": "article_body_paragraph",
+  "source_region_id": "new-britain-fingerprint-jane-gibson",
+  "source_page": "scans/en_dev/service-ndnp-ct-batch_ct_genesis_ver01-data-sn82014519-00414219731-1926110901-0155.png",
+  "source_page_sha256": "DC1840A5351200988FF97931348A71E58AF391A75C351E576641EF261147B471",
+  "source_master_file": "service-ndnp-ct-batch_ct_genesis_ver01-data-sn82014519-00414219731-1926110901-0155.jp2",
+  "source_master_sha256": "DDDC0059A0BC878D519AEE3A69FE8304750E9E24D05E1A056C628D934DEC04A4",
+  "page_width": 4888,
+  "page_height": 6440,
+  "region_bbox_xyxy": [
+    4080,
+    3500,
+    4840,
+    3930
+  ],
+  "text_source": "Manually transcribed and visually checked against the scanned page.",
+  "input_text": "The state expects Mrs. Jane Gibson to testify when she recovers from an illness now keeping her in a Jersey City hospital, that she tied her mule to a tree at this spot. Faurot had not completed his testimony at the luncheon recess.",
+  "verified_by": "Visual scan review",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "Jane Gibson",
+      "label": "PER",
+      "start_char": 23,
+      "end_char": 34
+    },
+    {
+      "text": "Jersey City",
+      "label": "LOC",
+      "start_char": 101,
+      "end_char": 112
+    },
+    {
+      "text": "Faurot",
+      "label": "PER",
+      "start_char": 170,
+      "end_char": 176
+    }
+  ]
+}

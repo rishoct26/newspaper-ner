@@ -1,0 +1,86 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "region_type": "article_body_paragraphs",
+  "source_region_id": "new-britain-fingerprint-mccarter-cross-examination",
+  "source_page": "scans/en_dev/service-ndnp-ct-batch_ct_genesis_ver01-data-sn82014519-00414219731-1926110901-0155.png",
+  "source_page_sha256": "DC1840A5351200988FF97931348A71E58AF391A75C351E576641EF261147B471",
+  "source_master_file": "service-ndnp-ct-batch_ct_genesis_ver01-data-sn82014519-00414219731-1926110901-0155.jp2",
+  "source_master_sha256": "DDDC0059A0BC878D519AEE3A69FE8304750E9E24D05E1A056C628D934DEC04A4",
+  "page_width": 4888,
+  "page_height": 6440,
+  "region_bbox_xyxy": [
+    4080,
+    5320,
+    4840,
+    6100
+  ],
+  "text_source": "Manually transcribed and visually checked against the scanned page; printed line wraps resolved.",
+  "input_text": "Robert McCarter, senior defense counsel, continuing his cross-examination of Edward Schwartz, fingerprint expert of the Jersey City police department, in a few questions drew from the witness the statement that detectives in seeking to apprehend criminals by fingerprints always tried to get to the scenes of crimes as soon as possible to get fingerprints while they were fresh. Yesterday the defense attorney had brought out, through Schwartz and another fingerprint expert, that the alleged fingerprints of Willie Stevens, on a calling card found at the scene of the slaying of the Rev. Mr. Hall and Mrs. Mills, had been kept several months in a desk. Later taken to the office of the New York city newspaper, Mirror, and finally turned over to the investigators whose work resulted in the present trial.",
+  "verified_by": "Visual scan review",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "Robert McCarter",
+      "label": "PER",
+      "start_char": 0,
+      "end_char": 15
+    },
+    {
+      "text": "Edward Schwartz",
+      "label": "PER",
+      "start_char": 77,
+      "end_char": 92
+    },
+    {
+      "text": "Jersey City",
+      "label": "LOC",
+      "start_char": 120,
+      "end_char": 131
+    },
+    {
+      "text": "Yesterday",
+      "label": "DATE",
+      "start_char": 379,
+      "end_char": 388
+    },
+    {
+      "text": "Schwartz",
+      "label": "PER",
+      "start_char": 435,
+      "end_char": 443
+    },
+    {
+      "text": "Willie Stevens",
+      "label": "PER",
+      "start_char": 509,
+      "end_char": 523
+    },
+    {
+      "text": "Rev. Mr. Hall",
+      "label": "PER",
+      "start_char": 584,
+      "end_char": 597
+    },
+    {
+      "text": "Mrs. Mills",
+      "label": "PER",
+      "start_char": 602,
+      "end_char": 612
+    },
+    {
+      "text": "New York",
+      "label": "LOC",
+      "start_char": 687,
+      "end_char": 695
+    },
+    {
+      "text": "Mirror",
+      "label": "ORG",
+      "start_char": 712,
+      "end_char": 718
+    }
+  ]
+}

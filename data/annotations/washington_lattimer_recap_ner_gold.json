@@ -1,0 +1,74 @@
+{
+  "annotation_schema_version": "1.0",
+  "annotation_type": "ner_gold",
+  "split": "dev",
+  "language": "en",
+  "region_type": "article_body_paragraphs",
+  "source_region_id": "washington-daily-news-lattimer-recapture-pardon",
+  "source_page": "scans/en_dev/service-ndnp-dlc-batch_dlc_dicorcia_ver01-data-sn82016181-00529045888-1926110901-0192.png",
+  "source_page_sha256": "9A2DF9CE503B84F329FAD3CC8A0EFB6B89EFE9962B56699C8E90EE02E0E2B0D8",
+  "source_master_file": "service-ndnp-dlc-batch_dlc_dicorcia_ver01-data-sn82016181-00529045888-1926110901-0192.jp2",
+  "source_master_sha256": "D750018B3B15546696B7F35FF97062DB79106866A3BD6871D4EA31C8536A5794",
+  "page_width": 3614,
+  "page_height": 5420,
+  "region_bbox_xyxy": [
+    265,
+    2100,
+    1540,
+    2490
+  ],
+  "text_source": "Manually transcribed and visually checked against the scanned page; logical paragraph breaks retained.",
+  "input_text": "The nine were taken at London, O., 30 miles from Columbus, where they fled in an auto which they obtained by ejecting its woman driver.\n\nAll those recaptured were back at the prison two hours after the break. Search for Oliver Glaspy, the only convict still at large, was continued today.\n\nA movement was started today to obtain a pardon for Lattimer in recognition of his loyalty and courage. A petition for clemency will be presented to Gov. Donahey.",
+  "verified_by": "Visual scan review",
+  "verified_on": "2026-11-11",
+  "entities": [
+    {
+      "text": "London",
+      "label": "LOC",
+      "start_char": 23,
+      "end_char": 29
+    },
+    {
+      "text": "O.",
+      "label": "LOC",
+      "start_char": 31,
+      "end_char": 33
+    },
+    {
+      "text": "Columbus",
+      "label": "LOC",
+      "start_char": 49,
+      "end_char": 57
+    },
+    {
+      "text": "Oliver Glaspy",
+      "label": "PER",
+      "start_char": 220,
+      "end_char": 233
+    },
+    {
+      "text": "today",
+      "label": "DATE",
+      "start_char": 282,
+      "end_char": 287
+    },
+    {
+      "text": "today",
+      "label": "DATE",
+      "start_char": 313,
+      "end_char": 318
+    },
+    {
+      "text": "Lattimer",
+      "label": "PER",
+      "start_char": 342,
+      "end_char": 350
+    },
+    {
+      "text": "Gov. Donahey",
+      "label": "PER",
+      "start_char": 439,
+      "end_char": 451
+    }
+  ]
+}
