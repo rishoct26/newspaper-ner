@@ -45,6 +45,17 @@ def _apply_known_title_rule(entities: list[dict]) -> list[dict]:
     return updated
 
 
+def _drop_vague_the_day(entities: list[dict]) -> list[dict]:
+    """Apply the written DATE rule that excludes generic phrase 'the day'."""
+    return [
+        dict(entity) for entity in entities
+        if not (
+            entity.get("label") == "DATE"
+            and str(entity.get("text", "")).casefold().strip() == "the day"
+        )
+    ]
+
+
 def _exact_counts(predictions: list[dict], gold: list[dict]) -> dict:
     predicted = Counter((str(item["text"]), str(item["label"])) for item in predictions)
     expected = Counter((str(item["text"]), str(item["label"])) for item in gold)
@@ -250,6 +261,7 @@ def compare(
     bootstrap_samples: int = typer.Option(1000, min=1, help="Region bootstrap resamples."),
     seed: int = typer.Option(DEFAULT_SEED, help="Seed for reproducible bootstrap and false-positive sample."),
     newspaper_title_rule: bool = typer.Option(False, "--newspaper-title-rule", help="Apply the dev-known exact masthead PER-to-ORG correction."),
+    drop_the_day_date_rule: bool = typer.Option(False, "--drop-the-day-date-rule", help="Drop DATE entities whose exact text is the generic phrase 'the day'."),
     scope_review: Path | None = typer.Option(None, "--scope-review", exists=True, dir_okay=False, help="JSON file listing regions excluded from paired evaluation due to crop/reference mismatch."),
 ):
     """Compare OCR and verified-reference NER, exact/lenient, by region and title."""
@@ -301,6 +313,9 @@ def compare(
             if newspaper_title_rule:
                 ocr_predictions = _apply_known_title_rule(ocr_predictions)
                 clean_predictions = _apply_known_title_rule(clean_predictions)
+            if drop_the_day_date_rule:
+                ocr_predictions = _drop_vague_the_day(ocr_predictions)
+                clean_predictions = _drop_vague_the_day(clean_predictions)
             rows.append({
                 "source_region_id": evaluation["source_region_id"],
                 "newspaper": _newspaper(evaluation["source_region_id"]),
@@ -339,6 +354,10 @@ def compare(
             "postprocessing": (
                 "Exact known newspaper-title PER-to-ORG correction applied to clean and OCR entities."
                 if newspaper_title_rule else "None"
+            ),
+            "date_postprocessing": (
+                "Dropped exact DATE text 'the day' per annotation rules."
+                if drop_the_day_date_rule else "None"
             ),
             "scope_review": {
                 "file": str(scope_review) if scope_review is not None else None,
