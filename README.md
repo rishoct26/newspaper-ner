@@ -22,13 +22,6 @@ page pixels, and writes JSON plus an entity overlay image.
 - [NER annotation rules](docs/ner_annotation.md)
 - [Detailed development progress log](docs/progress_report.md)
 
-The group must add member names, roll numbers, and actual contributions before
-submission. The recording is hosted on Google Drive; confirm its sharing
-permission allows the intended viewers to open it. No slide deck is included
-in this repository version. Sample scans and image-derived outputs are
-prepared locally but remain uncommitted pending review of the source rights
-recorded in `data/en_dev_sources.csv`.
-
 ## Pipeline
 
 ![Newspaper image to entity output pipeline](docs/newspaper_ner_pipeline.svg)
