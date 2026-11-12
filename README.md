@@ -14,6 +14,9 @@ page pixels, and writes JSON plus an entity overlay image.
 
 ## Submission materials
 
+- [Project report (Google Drive)](https://drive.google.com/file/d/1lZ6b4jmlzxwu2tB3_c8E4iwi3Zf7yjTd/view?usp=sharing)
+- [Project presentation (Google Slides)](https://docs.google.com/presentation/d/1PZykPBgFJQNd71IEVaYXWrotpovtzF9f/edit?usp=sharing&ouid=104881847484127663027&rtpof=true&sd=true)
+- [Individual contribution report (Google Drive)](https://drive.google.com/file/d/12g-pvc7UIB4N6QvLXDBqvOFUa__jQOPx/view?usp=sharing)
 - [Editable report source (Markdown)](docs/project_report.md)
 - A locally generated PDF copy is available at `docs/project_report.pdf`; it contains scan-derived figures and is not included in Git pending item-specific rights review.
 - [Presentation/demo recording (Google Drive)](https://drive.google.com/file/d/1KgLx4ENKee_Xplsn5E53puoNxpsNbBH-/view?usp=sharing)
@@ -22,6 +25,10 @@ page pixels, and writes JSON plus an entity overlay image.
 - [NER annotation rules](docs/ner_annotation.md)
 - [Detailed development progress log](docs/progress_report.md)
 
+The shared submission files are hosted outside this repository; confirm their
+sharing permissions allow the intended viewers to open them. Sample scans and
+image-derived outputs are prepared locally but remain uncommitted pending
+review of the source rights recorded in `data/en_dev_sources.csv`.
 ## Pipeline
 
 ![Newspaper image to entity output pipeline](docs/newspaper_ner_pipeline.svg)
