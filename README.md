@@ -179,6 +179,4 @@ samples/                Local downscaled demo assets; rights review pending
 
 The working end-to-end demo is English-only. Hindi OCR support exists in the
 OCR layer, but Hindi NER has not been implemented or evaluated. Odia has not
-been added. The working end-to-end demo is English-only. Hindi OCR support exists in the
-OCR layer, but Hindi NER has not been implemented or evaluated. Odia has not
-been added.Further development will build a robust multilingual pipeline by adding Hindi and Odia support, expanding and validating datasets, and strengthening evaluation across diverse newspaper sources and layouts.
+been added. Further development will build a robust multilingual pipeline by adding Hindi and Odia support, expanding and validating datasets, and strengthening evaluation across diverse newspaper sources and layouts.
