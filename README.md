@@ -16,11 +16,18 @@ page pixels, and writes JSON plus an entity overlay image.
 
 - [Editable report source (Markdown)](docs/project_report.md)
 - A locally generated PDF copy is available at `docs/project_report.pdf`; it contains scan-derived figures and is not included in Git pending item-specific rights review.
+- [Presentation/demo recording (Google Drive)](https://drive.google.com/file/d/1KgLx4ENKee_Xplsn5E53puoNxpsNbBH-/view?usp=sharing)
 - [Pipeline diagram](docs/newspaper_ner_pipeline.svg)
 - [OCR evaluation rules](docs/evaluation.md)
 - [NER annotation rules](docs/ner_annotation.md)
 - [Detailed development progress log](docs/progress_report.md)
 
+The group must add member names, roll numbers, and actual contributions before
+submission. The recording is hosted on Google Drive; confirm its sharing
+permission allows the intended viewers to open it. No slide deck is included
+in this repository version. Sample scans and image-derived outputs are
+prepared locally but remain uncommitted pending review of the source rights
+recorded in `data/en_dev_sources.csv`.
 
 ## Pipeline
 
@@ -39,6 +46,27 @@ output retains OCR confidence for the words forming each entity.
 
 ## How to run
 
+### Get the project and input page
+
+Clone the source repository in PowerShell:
+
+```powershell
+git clone https://github.com/rishoct26/newspaper-ner.git
+cd newspaper-ner
+```
+
+Newspaper scans are not stored in this repository. For the included Cordele
+demo, download the 9 November 1926 page image from its
+[Library of Congress item record](https://www.loc.gov/item/2022239700/1926-11-09/ed-1/).
+Save the JP2 file as
+`scans\en_dev\en_cordele-dispatch_1926-11-09_p01.jp2`, creating the folders if
+needed. Convert it to the PNG expected by the demo after installing the main
+Python dependencies below.
+
+The downloader is not automated because the Library of Congress endpoint
+returned HTTP 403 during development. Review each source item's rights record;
+the README's rights note is not permission to redistribute page images.
+
 ### Windows prerequisites
 
 - Python 3.13 (the tested version is 3.13.13).
@@ -56,6 +84,17 @@ py -3.13 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -e .
 $env:TESSERACT_CMD = "C:\Program Files\Tesseract-OCR\tesseract.exe"
+New-Item -ItemType Directory -Force models\tessdata | Out-Null
+Invoke-WebRequest "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/4.1.0/eng.traineddata" -OutFile "models\tessdata\eng.traineddata"
+```
+
+The Python install downloads the pinned spaCy model. The separate English
+Tesseract model file above is also required; it is kept out of Git.
+
+Convert the downloaded JP2 to PNG:
+
+```powershell
+python scripts\jp2_to_png.py scans\en_dev
 ```
 
 Create the separate layout environment once on a new machine:
@@ -136,7 +175,8 @@ On one Cordele article-body crop, OCR with line-end hyphens joined scored CER
 0.27% (1 edit / 370 reference characters) and WER 1.49% (1 edit / 67 reference
 words). These are small development-region results, not estimates of
 general-purpose accuracy. The full detailed tables, settings, and limitations
-are in the [project report](docs/project_report.pdf).
+are in the [project report source](docs/project_report.md). A PDF copy with
+scan-derived figures is available locally but is not tracked in Git.
 
 ## Models and data sources
 

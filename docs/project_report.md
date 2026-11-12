@@ -235,14 +235,32 @@ An OCR word record includes a recognized token, language, OCR confidence, Tesser
 
 ## 8. Usability: setup and demonstration
 
-The commands below are for Windows PowerShell from the repository root. The main environment is Python 3.13.13. Tesseract OCR 5.4 must be installed separately. The tested executable path is shown; change it if Tesseract is installed elsewhere.
+The demo is a local command-line application run from Windows PowerShell. It needs Windows 11, Python 3.13, Tesseract OCR 5.4, an internet connection for first-time package/model downloads, and the project source. Tesseract is a separate Windows program; the tested executable path is shown below and should be changed if installed elsewhere.
+
+### 4.2 Instructions for Running the Application
+
+Clone the source code and enter the repository:
+
+```powershell
+git clone https://github.com/rishoct26/newspaper-ner.git
+cd newspaper-ner
+```
+
+The newspaper page is not included in Git. Download the Cordele Dispatch, 9 November 1926 page image from its [Library of Congress item record](https://www.loc.gov/item/2022239700/1926-11-09/ed-1/), and save the JP2 file as `scans\en_dev\en_cordele-dispatch_1926-11-09_p01.jp2`. Create the folder if it does not exist. Review the source item's rights; the source link is provided for provenance and is not a redistribution license.
+
+Create and activate the main Python environment, install the project dependencies, and download the English Tesseract model file used by this project:
 
 ```powershell
 py -3.13 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -e .
 $env:TESSERACT_CMD = "C:\Program Files\Tesseract-OCR\tesseract.exe"
+New-Item -ItemType Directory -Force models\tessdata | Out-Null
+Invoke-WebRequest "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/4.1.0/eng.traineddata" -OutFile "models\tessdata\eng.traineddata"
+python scripts\jp2_to_png.py scans\en_dev
 ```
+
+The package installation downloads the pinned spaCy model. The Tesseract English model file is stored locally and is not tracked by Git. The JP2 conversion script creates the PNG used in the demo.
 
 Create the separate PaddleOCR environment once if it is not already present:
 
@@ -252,7 +270,7 @@ py -3.13 -m venv .venv\layout-check
 .\.venv\layout-check\Scripts\python.exe -m pip install paddlepaddle==3.3.1 paddleocr==3.7.0
 ```
 
-Run the single-command Cordele demonstration:
+Run the one-command Cordele demonstration from the repository root:
 
 ```powershell
 python -m newspaper_ner.demo "scans\en_dev\en_cordele-dispatch_1926-11-09_p01.png" --output-dir "outputs\cordele-submission-demo"
@@ -266,7 +284,7 @@ code outputs\cordele-submission-demo\ocr.json
 code outputs\cordele-submission-demo\ner.json
 ```
 
-Layout inference downloads or uses PaddleOCR model weights in its local cache. The Cordele command avoids that inference delay when the matching saved layout file is available. Generated scans, weights, caches, and outputs are not required in the Git source tree.
+Layout inference downloads or uses PaddleOCR model weights in its local cache. A fresh clone does not contain the generated layout JSON, so the first demo run performs layout inference; later runs can reuse a matching saved layout file. Generated scans, model weights, caches, and outputs are deliberately kept out of the Git source tree.
 
 ## 9. Limitations and risks
 
