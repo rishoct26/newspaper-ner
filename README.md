@@ -21,11 +21,6 @@ page pixels, and writes JSON plus an entity overlay image.
 - [NER annotation rules](docs/ner_annotation.md)
 - [Detailed development progress log](docs/progress_report.md)
 
-The group must add member names, roll numbers, actual contributions, and an
-accessible recording link before submission. No slide deck or video recording
-is included in this repository version. Sample scans and image-derived outputs
-are prepared locally but remain uncommitted pending review of the source rights
-recorded in `data/en_dev_sources.csv`.
 
 ## Pipeline
 
