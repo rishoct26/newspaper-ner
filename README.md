@@ -25,10 +25,6 @@ page pixels, and writes JSON plus an entity overlay image.
 - [NER annotation rules](docs/ner_annotation.md)
 - [Detailed development progress log](docs/progress_report.md)
 
-The shared submission files are hosted outside this repository; confirm their
-sharing permissions allow the intended viewers to open them. Sample scans and
-image-derived outputs are prepared locally but remain uncommitted pending
-review of the source rights recorded in `data/en_dev_sources.csv`.
 ## Pipeline
 
 ![Newspaper image to entity output pipeline](docs/newspaper_ner_pipeline.svg)
